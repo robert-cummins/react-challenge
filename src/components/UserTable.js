@@ -1,14 +1,14 @@
 import React from 'react'
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
-import TableFooter from '@material-ui/core/TableFooter';
-import TablePagination from '@material-ui/core/TablePagination';
-import Container from '@material-ui/core/Container';
+import Table from '@material-ui/core/Table'
+import TableBody from '@material-ui/core/TableBody'
+import TableCell from '@material-ui/core/TableCell'
+import TableContainer from '@material-ui/core/TableContainer'
+import TableHead from '@material-ui/core/TableHead'
+import TableRow from '@material-ui/core/TableRow'
+import Paper from '@material-ui/core/Paper'
+import TableFooter from '@material-ui/core/TableFooter'
+import TablePagination from '@material-ui/core/TablePagination'
+
 
 const UserTable = (props) => {
     const [page, setPage] = React.useState(0)
@@ -24,7 +24,7 @@ const UserTable = (props) => {
     }
     console.log(props.users)
     return (
-        <Container maxWidth="md">
+        <>
             <h1 className={"title"}>USERS</h1>
             <TableContainer component={Paper}>
                 <Table className={"user-table"} aria-label="simple table">
@@ -67,10 +67,10 @@ const UserTable = (props) => {
                     </TableFooter>
                 </Table>
             </TableContainer>
-        </Container>
+        </>
     )
 
 };
 
 
-export default UserTable;
+export default UserTable

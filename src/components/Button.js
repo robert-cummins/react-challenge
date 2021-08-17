@@ -1,8 +1,12 @@
 import React from 'react'
  
-const Button = () => {
-    return <h1>Button</h1>
+const GetUsersButton = (props) => {
+    return (
+        <button onClick={props.getUsers} className={"get-users-button"}>
+          CLICK TO GET USERS
+        </button>
+    )
 };
  
 
-export default Button;
+export default GetUsersButton;

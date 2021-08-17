@@ -1,27 +1,29 @@
-import React, { useEffect} from "react";
-import Button from './Button'
+import React from "react"
+import GetUsersButton from './Button'
 import UserTable from './UserTable'
 import UserAPI from '../api/Users'
+import Container from '@material-ui/core/Container'
 
 const LandingPage = () => {
 
     const [users, setUsers] = React.useState([])
 
-    useEffect(() => {
+    const getUsers = () => {
+        console.log("hello")
         UserAPI.getUsers().then((response) => {
             setUsers(response.data.results)
         })
-    })
+    }
 
 
     return (
-        <>
-            {/* <Button /> */}
-            <UserTable users={users} />
-        </>
+        <Container maxWidth="lg">
+            {users.length === 0 ?
+                <GetUsersButton getUsers={getUsers} /> :
+                <UserTable users={users} />
+            }
+        </Container>
     )
-
-
 }
 
 export default LandingPage
