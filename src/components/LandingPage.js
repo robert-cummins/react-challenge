@@ -1,27 +1,26 @@
-import React from 'react'
+import React, { useEffect} from "react";
 import Button from './Button'
-import Table from './Table'
+import UserTable from './UserTable'
+import UserAPI from '../api/Users'
 
-class LandingPage extends React.Component {
-    constructor(props){
-        super(props)
-        this.state = {
-            users: []
-        }
-    }
+const LandingPage = () => {
 
-    handleCLick = () => {
-        
-    }
+    const [users, setUsers] = React.useState([])
 
-    render(){
-        return(
-            <>
-                <Button/>
-                <Table/>
-            </>
-        )
-    }
+    useEffect(() => {
+        UserAPI.getUsers().then((response) => {
+            setUsers(response.data.results)
+        })
+    })
+
+
+    return (
+        <>
+            {/* <Button /> */}
+            <UserTable users={users} />
+        </>
+    )
+
 
 }
 
