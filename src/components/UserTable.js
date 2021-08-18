@@ -22,7 +22,7 @@ const UserTable = (props) => {
         setRowsPerPage(parseInt(event.target.value, 10));
         setPage(0);
     }
-    console.log(props.users)
+    
     return (
         <>
             <h1 className={"title"}>USERS</h1>
