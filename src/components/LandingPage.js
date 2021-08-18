@@ -9,7 +9,6 @@ const LandingPage = () => {
     const [users, setUsers] = React.useState([])
 
     const getUsers = () => {
-        console.log("hello")
         UserAPI.getUsers().then((response) => {
             setUsers(response.data.results)
         })
@@ -17,7 +16,7 @@ const LandingPage = () => {
 
 
     return (
-        <Container maxWidth="lg">
+        <Container  maxWidth="lg">
             {users.length === 0 ?
                 <GetUsersButton getUsers={getUsers} /> :
                 <UserTable users={users} />
